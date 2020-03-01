@@ -1,0 +1,37 @@
+{
+  "name": "swipeable-react",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "description": "React component for swipe events on touch",
+  "homepage": "https://github.com/moubi/swipeable-react",
+  "private": true,
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "devDependencies": {
+    "classnames": "2.2.5"
+  },
+  "scripts": {
+    "client": "PORT=3002 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "proxy": "http://localhost:8080",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
