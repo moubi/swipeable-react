@@ -30,6 +30,7 @@
     "unexpected-sinon": "^10.11.2"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "lint": "eslint ."
   }
 }
