@@ -5,14 +5,21 @@
   "description": "React component for swipe events on touch",
   "homepage": "https://github.com/moubi/swipeable-react",
   "private": true,
+  "author": "Miroslav Nikolov",
   "dependencies": {
     "react": "16.9.0",
     "react-dom": "16.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moubi/swipeable-react"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
     "jest": "^25.1.0",
     "react-dom-testing": "^1.5.0",
     "react-test-renderer": "^16.13.0",
@@ -23,11 +30,6 @@
     "unexpected-sinon": "^10.11.2"
   },
   "scripts": {
-    "client": "PORT=3002 react-scripts start",
-    "build": "react-scripts build",
     "test": "jest --watch"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
