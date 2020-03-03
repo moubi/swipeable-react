@@ -10,16 +10,22 @@
     "react-dom": "16.9.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "react-dom-testing": "^1.5.0",
+    "react-test-renderer": "^16.13.0",
     "sinon": "9.0.0",
-    "unexpected-sinon": "^10.11.2",
     "unexpected": "^11.0.1",
+    "unexpected-dom": "^4.11.1",
     "unexpected-reaction": "^2.6.0",
-    "react-dom-testing": "^1.5.0"
+    "unexpected-sinon": "^10.11.2"
   },
   "scripts": {
     "client": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "jest --watch"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,4 +1,4 @@
-import expect, { Mounter, getInstance } from "../../testUtils/unexpected-react";
+import expect, { Mounter, getInstance } from "../testUtils/unexpected-react";
 import React from "react";
 import sinon from "sinon";
 
@@ -253,7 +253,7 @@ describe("Swipeable", () => {
       );
     });
 
-    it("should NOT swipe vertically if distance too big", () => {
+    it("should NOT swipe vertically if distance is too big", () => {
       props.maxDistance = 100;
       const { instance } = getInstance(<Swipeable {...props} />);
       const stopPropagation = sinon.stub().named("stopPropagation");
