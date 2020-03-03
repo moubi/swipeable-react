@@ -10,7 +10,11 @@
     "react-dom": "16.9.0"
   },
   "devDependencies": {
-    "classnames": "2.2.5"
+    "sinon": "9.0.0",
+    "unexpected-sinon": "^10.11.2",
+    "unexpected": "^11.0.1",
+    "unexpected-reaction": "^2.6.0",
+    "react-dom-testing": "^1.5.0"
   },
   "scripts": {
     "client": "PORT=3002 react-scripts start",
@@ -20,18 +24,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "proxy": "http://localhost:8080",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
