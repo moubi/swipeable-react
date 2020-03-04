@@ -6,17 +6,18 @@
   "homepage": "https://github.com/moubi/swipeable-react",
   "private": true,
   "author": "Miroslav Nikolov",
-  "dependencies": {
-    "react": "16.9.0",
-    "react-dom": "16.9.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/moubi/swipeable-react"
   },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.3",
@@ -30,6 +31,7 @@
     "unexpected-sinon": "^10.11.2"
   },
   "scripts": {
+    "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
     "test": "jest --watch",
     "lint": "eslint ."
   }
