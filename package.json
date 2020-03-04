@@ -1,6 +1,6 @@
 {
   "name": "swipeable-react",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "lib/index.js",
   "description": "React component for swipe events on touch",
   "homepage": "https://github.com/moubi/swipeable-react",
