@@ -4,7 +4,6 @@
   "main": "./lib/index.js",
   "description": "React component for swipe events on touch",
   "homepage": "https://github.com/moubi/swipeable-react",
-  "private": true,
   "author": "Miroslav Nikolov",
   "repository": {
     "type": "git",
