@@ -2,7 +2,7 @@ import expect, { Mounter, getInstance } from "../testUtils/unexpected-react";
 import React from "react";
 import sinon from "sinon";
 
-import Swipeable from "./Swipeable";
+import Swipeable from "../src/Swipeable";
 
 let props;
 
