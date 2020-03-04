@@ -31,6 +31,7 @@
   },
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
+    "prepare": "npm run build",
     "test": "jest --watch",
     "lint": "eslint ."
   }
