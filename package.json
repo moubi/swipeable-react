@@ -5,6 +5,7 @@
   "description": "React component for swipe events on touch",
   "homepage": "https://github.com/moubi/swipeable-react",
   "author": "Miroslav Nikolov",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/moubi/swipeable-react"
@@ -31,7 +32,7 @@
   },
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
-    "prepare": "npm run build",
+    "prepublish": "rm -rf ./lib && npm run build",
     "test": "jest --watch",
     "lint": "eslint ."
   }
