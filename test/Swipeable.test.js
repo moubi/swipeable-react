@@ -1,4 +1,4 @@
-import expect, { Mounter, getInstance } from "../testUtils/unexpected-react";
+import expect, { Mounter, getInstance } from "./utils/unexpected-react";
 import React from "react";
 import sinon from "sinon";
 
