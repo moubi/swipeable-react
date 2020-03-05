@@ -8,21 +8,32 @@ React component to handle swiping on touch devices.
 yarn add --save swipeable-react
 ```
 
+&nbsp;
 ## Usage
 
 ```jsx
-<Swipeable
-  onSwipeLeft={() => { console.log("swiped left"); }}
-  onSwipeRight={() => { console.log("swiped right"); }}
->
-  {innerRef => (
-    <div ref={innerRef}>
-      I will detect swiping!
-    </div>
-  )}
-</Swipeable>
+import Swipeable from "swipeable-react";
+...
+
+class YourOwnComponent extends Component {
+  render() {
+    return (
+      <Swipeable
+        onSwipeLeft={() => { console.log("swiped left"); }}
+        onSwipeRight={() => { console.log("swiped right"); }}
+      >
+        {innerRef => (
+          <div ref={innerRef}>
+            I will detect swiping!
+          </div>
+        )}
+      </Swipeable>
+    );
+  }
+}
 ```
 
+&nbsp;
 ### Notes
 
  - Supports both vertical and horizontal swiping.
@@ -33,6 +44,7 @@ yarn add --save swipeable-react
 
  Note that in this scenario successful inner swipe will prevent parent swipeables. The preventing is done by calling `stopPropagation()` in the `touchend` handler.
 
+&nbsp;
 ## API
 
 | Prop          | Type          | Default  | Description |
@@ -48,6 +60,7 @@ yarn add --save swipeable-react
 
  \* All props are optional except the **children**.
 
+&nbsp;
 ## Development
 
 The project is built on node `v10.15.1`. Set as default in `.nvmrc`
@@ -66,10 +79,12 @@ yarn build
 ```
 That will create `lib/` folder with `index.js` file containing transpiled code from the `src/Swipeable.js` component
 
+&nbsp;
 ### Credits
 
 Non-react [swiped-events](https://github.com/john-doherty/swiped-events)
 
+&nbsp;
 ## License
 
 [MIT License](LICENSE)
