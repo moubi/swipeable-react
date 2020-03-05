@@ -35,6 +35,7 @@
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
     "prepublish": "rm -rf ./lib && npm run build",
     "test": "jest --watch",
+    "test:nowatch": "jest",
     "lint": "eslint ."
   }
 }

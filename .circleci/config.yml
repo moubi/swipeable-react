@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: yarn test
+          command: yarn test:nowatch
       - run:
           name: Linting
           command: yarn lint
