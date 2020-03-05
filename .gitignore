@@ -2,7 +2,7 @@
 logs
 *.log
 .npm
-.eslintcache
+.vscode/
 /node_modules
 lib
 .DS_Store

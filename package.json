@@ -28,7 +28,8 @@
     "unexpected": "^11.0.1",
     "unexpected-dom": "^4.11.1",
     "unexpected-reaction": "^2.6.0",
-    "unexpected-sinon": "^10.11.2"
+    "unexpected-sinon": "^10.11.2",
+    "prettier": "~1.17.0"
   },
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
