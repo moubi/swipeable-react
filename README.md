@@ -5,7 +5,7 @@ React component to handle swiping on touch devices.
 ## Install
 
 ```
-npm install seipeable-react
+yarn add --save swipeable-react
 ```
 
 ## Usage
