@@ -35,10 +35,8 @@ class YourOwnComponent extends Component {
 ### Notes
 
  - Supports both vertical and horizontal swiping.
-
- - `<Swipeable />` accepts a single child which must be a function.
-
- - Multiple nested Swipeables are also supported.
+ - Uses `touchstart`, `touchmove` and `touchend` events
+ - Multiple nested Swipeables are supported.
 
  Note that in this scenario successful inner swipe will prevent parent swipeables. The preventing is done by calling `stopPropagation()` in the `touchend` handler.
 
@@ -55,11 +53,11 @@ class YourOwnComponent extends Component {
 | onSwipeUp     | function      |          | handler for successful swipe up                    |
 | onSwipeDown   | function      |          | handler for successful swipe down                  |
 
- \* All props are optional except the **children**.
+  \* All props are optional except the **children**.
 
 ## Development
 
-The project is built on node `v10.15.1`. Set as default in `.nvmrc`
+The project is built on node `v10.15.1`. Set as default in `.nvmrc` for nvm users.
 ```
 yarn
 ```
@@ -73,7 +71,7 @@ Deploying by:
 ```
 yarn build
 ```
-That will create `lib/` folder with `index.js` file containing transpiled code from the `src/Swipeable.js` component
+That will create a `lib/` folder with `index.js` file containing transpiled code from the `src/Swipeable.js` component
 
 ## Credits
 
