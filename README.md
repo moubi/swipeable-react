@@ -23,11 +23,11 @@ yarn add --save swipeable-react
 </Swipeable>
 ```
 
+### Notes
+
  - Supports both vertical and horizontal swiping.
 
  - `<Swipeable />` accepts a single child which must be a function.
-
- The function passes the ref down to the DOM element that will get touch events attached to.
 
  - Multiple nested Swipeables are also supported.
 
@@ -37,7 +37,7 @@ yarn add --save swipeable-react
 
 | Prop          | Type          | Default  | Description |
 | ------------- | ------------- | -------- | ----------- |
-| children      | function      |          | function that wraps an el (or Component) and passes the innerRef to it |
+| children      | function      |          | Function that passes the ref down to the DOM element which will get touch events attached to. |
 | minDistance   | number        | 20       | min distance in px between touchstart and touchend |
 | maxDistance   | number        | Infinity | max distance in px between touchstart and touchend |
 | timeout       | number        | 500      | the time in ms between touchstart and touchend     |
@@ -46,7 +46,7 @@ yarn add --save swipeable-react
 | onSwipeUp     | function      |          | handler for successful swipe up                    |
 | onSwipeDown   | function      |          | handler for successful swipe down                  |
 
- All props are optional except the children.
+ \* All props are optional except the **children**.
 
 ## Development
 
@@ -55,7 +55,7 @@ The project is built on node `v10.15.1`. Set as default in `.nvmrc`
 yarn
 ```
 
-Run the tests in jest watch mode:
+Tests run in jest watch mode:
 ```
 yarn test
 ```
