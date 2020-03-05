@@ -2,7 +2,6 @@
 
 React component to handle swiping on touch devices.
 
-&nbsp;
 ## Install
 
 ```
@@ -58,7 +57,6 @@ class YourOwnComponent extends Component {
 
  \* All props are optional except the **children**.
 
-&nbsp;
 ## Development
 
 The project is built on node `v10.15.1`. Set as default in `.nvmrc`
