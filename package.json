@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js",
-    "prepublish": "rm -rf ./lib && npm run test:nowatch && npm run lint && npm run build",
+    "prepublish": "rm -rf ./lib && npm run build",
     "test": "jest --watch",
     "test:nowatch": "jest",
     "lint": "eslint ."
