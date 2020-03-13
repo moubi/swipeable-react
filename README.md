@@ -11,7 +11,7 @@
     <a target="_blank" href="https://u49lp.csb.app/">Live demo for touch!</a>
   </p>
   <p>
-    <a target="_blank" href="https://codesandbox.io/s/swipeable-view-u49lp?fontsize=14&hidenavigation=1&theme=dark">Codesandbox for that example!</a>
+    <a target="_blank" href="https://codesandbox.io/s/swipeable-view-u49lp?fontsize=14&hidenavigation=1&theme=dark">That example's codesandbox!</a>
   </p>
 </div>
 
