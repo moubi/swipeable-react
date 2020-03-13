@@ -1,7 +1,19 @@
-# swipeable-react
-Compact react component to handle swiping on touch devices.
+<div align="center">
+<h1>swipeable-react</h1>
+<p>
+  Compact react component to detect swiping on touch devices.
+</p>
 
 [![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
+
+  <img alt="A preview of swipeable-react in action" src="swipeable_react_preview.gif" width="300" height="424" />
+  <p>
+    <a target="_blank" href="https://u49lp.csb.app/">Live demo for touch!</a>
+  </p>
+  <p>
+    <a target="_blank" href="https://codesandbox.io/s/swipeable-view-u49lp?fontsize=14&hidenavigation=1&theme=dark">Codesandbox for that example!</a>
+  </p>
+</div>
 
 ## Install
 ```
