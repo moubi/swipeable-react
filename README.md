@@ -40,6 +40,7 @@ function YourOwnComponent(props) {
   );
 }
 ```
+Then it's **up to you** on how to react on these swiping events.
 
 ## API
 | Prop          | Type          | Default  | Description |
