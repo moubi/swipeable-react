@@ -75,8 +75,8 @@ describe("Swipeable", () => {
       ]
     });
 
-    return expect(instance.clientX, "to be", 50).then(() =>
-      expect(instance.clientY, "to be", 10)
+    return expect(instance.x, "to be", 50).then(() =>
+      expect(instance.y, "to be", 10)
     );
   });
 
@@ -100,8 +100,8 @@ describe("Swipeable", () => {
       ]
     });
 
-    return expect(instance.clientXDiff, "to be", 0).then(() =>
-      expect(instance.clientYDiff, "to be", 0)
+    return expect(instance.xDiff, "to be", 0).then(() =>
+      expect(instance.yDiff, "to be", 0)
     );
   });
 
@@ -125,8 +125,8 @@ describe("Swipeable", () => {
       ]
     });
 
-    return expect(instance.clientXDiff, "to be", 20).then(() =>
-      expect(instance.clientYDiff, "to be", 7)
+    return expect(instance.xDiff, "to be", 20).then(() =>
+      expect(instance.yDiff, "to be", 7)
     );
   });
 

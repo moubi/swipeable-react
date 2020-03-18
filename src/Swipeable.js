@@ -9,10 +9,10 @@ export default class Swipeable extends PureComponent {
 
     this.el = null;
     this.touchStartedTime = null;
-    this.clientX = null;
-    this.clientY = null;
-    this.clientXDiff = null;
-    this.clientYDiff = null;
+    this.x = null;
+    this.y = null;
+    this.xDiff = null;
+    this.yDiff = null;
 
     this.handleTouchStart = this.handleTouchStart.bind(this);
     this.handleTouchMove = this.handleTouchMove.bind(this);
@@ -33,17 +33,17 @@ export default class Swipeable extends PureComponent {
 
   handleTouchStart(e) {
     this.touchStartedTime = Date.now();
-    this.clientX = e.touches[0].clientX;
-    this.clientY = e.touches[0].clientY;
-    this.clientXDiff = 0;
-    this.clientYDiff = 0;
+    this.x = e.touches[0].clientX;
+    this.y = e.touches[0].clientY;
+    this.xDiff = 0;
+    this.yDiff = 0;
   }
 
   handleTouchMove(e) {
-    if (!this.clientX || !this.clientY) return;
-
-    this.clientXDiff = this.clientX - e.touches[0].clientX;
-    this.clientYDiff = this.clientY - e.touches[0].clientY;
+    if (this.x && this.y) {
+      this.xDiff = this.x - e.touches[0].clientX;
+      this.yDiff = this.y - e.touches[0].clientY;
+    }
   }
 
   handleTouchEnd(e) {
@@ -56,45 +56,42 @@ export default class Swipeable extends PureComponent {
       onSwipeUp,
       onSwipeDown
     } = this.props;
+
     const timeDiff = Date.now() - this.touchStartedTime;
-    const clientXDiffAbs = Math.abs(this.clientXDiff);
-    const clientYDiffAbs = Math.abs(this.clientYDiff);
+    const xDiffAbs = Math.abs(this.xDiff);
+    const yDiffAbs = Math.abs(this.yDiff);
 
     // Horizontal swipe
-    if (clientXDiffAbs > clientYDiffAbs) {
+    if (xDiffAbs > yDiffAbs) {
       if (
-        clientXDiffAbs >= minDistance &&
-        clientXDiffAbs <= maxDistance &&
+        xDiffAbs >= minDistance &&
+        xDiffAbs <= maxDistance &&
         timeDiff <= timeout
       ) {
         // Prevent other swipeables
         e.stopPropagation();
-        if (this.clientXDiff > 0) {
+        if (this.xDiff > 0) {
           onSwipeLeft && onSwipeLeft();
         } else {
-          onSwipeLeft && onSwipeRight();
+          onSwipeRight && onSwipeRight();
         }
       }
       // Vertical swipe
     } else {
       if (
-        clientYDiffAbs >= minDistance &&
-        clientYDiffAbs <= maxDistance &&
+        yDiffAbs >= minDistance &&
+        yDiffAbs <= maxDistance &&
         timeDiff <= timeout
       ) {
         // Prevent other swipeables
         e.stopPropagation();
-        if (this.clientYDiff > 0) {
+        if (this.yDiff > 0) {
           onSwipeUp && onSwipeUp();
         } else {
           onSwipeDown && onSwipeDown();
         }
       }
     }
-
-    this.clientX = null;
-    this.clientY = null;
-    this.touchStartedTime = null;
   }
 
   render() {
