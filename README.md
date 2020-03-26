@@ -1,18 +1,18 @@
 <div align="center">
 <h1>SwipeableReact</h1>
 
-**Compact react component to detect swiping on touch devices**
+**Small react component to enable swiping in mobile browsers**
 
 [![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
 
-Detecting horizontal/vertical swiping &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What you could achieve &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Detecting horizontal/vertical swiping &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What you could use it for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <img alt="A preview what swipeable-react is for" src="src/assets/swipeable_react_preview.gif" width="300" height="424" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img alt="A preview of what can be achieved with swipeable-react" src="src/assets/product_card_preview.gif" width="299" height="424" />
 
 [Live demo for touch!](https://u49lp.csb.app/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Live demo for touch!](https://htntm.csb.app/)
 
-[That example's codesandbox](https://codesandbox.io/s/swipeable-view-u49lp?fontsize=14&hidenavigation=1&theme=dark) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [That example's codesandbox](https://codesandbox.io/s/swipeable-product-card-htntm?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit Swiping views](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swiping-views-u49lp?fontsize=14&hidenavigation=1&theme=dark) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Edit Swipeable product card](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swipeable-product-card-htntm?fontsize=14&hidenavigation=1&theme=dark)
 </div>
 
 ## Install
