@@ -17,7 +17,7 @@ Detecting horizontal/vertical swiping &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Install
 ```
-yarn add --save swipeable-react
+yarn add swipeable-react
 ```
 
 ## Usage
