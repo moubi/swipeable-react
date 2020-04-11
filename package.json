@@ -34,7 +34,8 @@
     "gzip-size-cli": "^3.0.0"
   },
   "scripts": {
-    "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js --presets minify | gzip-size ./lib/index.js",
+    "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js --presets minify",
+    "size": "gzip-size ./lib/index.js",
     "prepublish": "rm -rf ./lib && npm run build",
     "test": "jest --watch",
     "test:nowatch": "jest",
