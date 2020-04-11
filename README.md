@@ -1,7 +1,7 @@
 <div align="center">
 <h1>SwipeableReact</h1>
 
-**Small react component to enable swiping in mobile browsers**
+**Small (1.4kB gzip ✨) React component to enable swiping in mobile browsers**
 
 [![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/moubi/swipeable-react.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/moubi/swipeable-react/context:javascript) [![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
 
