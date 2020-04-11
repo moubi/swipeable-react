@@ -1,18 +1,17 @@
 <div align="center">
-<h1>SwipeableReact</h1>
+<h1>Swipeable</h1>
 
-**Small (1.4kB gzip ✨) React component to enable swiping in mobile browsers**
+**Small (1.4kB gzip ✨), no dependencies React component to enable swiping in mobile browsers**
 
 [![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/moubi/swipeable-react.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/moubi/swipeable-react/context:javascript) [![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
 
-Detecting horizontal/vertical swiping &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What you could use it for &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+What you could use it for
 
-<img alt="A preview what swipeable-react is for" src="src/assets/swipeable_react_preview.gif" width="300" height="424" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img alt="A preview of what can be achieved with swipeable-react" src="src/assets/product_card_preview.gif" width="299" height="424" />
 
-[Live demo for touch!](https://u49lp.csb.app/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Live demo for touch!](https://htntm.csb.app/)
+[Live mobile demo!](https://htntm.csb.app/)
 
-[![Edit Swiping views](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swiping-views-u49lp?fontsize=14&hidenavigation=1&theme=dark) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Edit Swipeable product card](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swipeable-product-card-htntm?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit Swipeable product card](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swipeable-product-card-htntm?fontsize=14&hidenavigation=1&theme=dark)
 </div>
 
 ## Install
@@ -41,6 +40,15 @@ function YourOwnComponent(props) {
 }
 ```
 Then it's **up to you** on how to react on these swiping events.
+
+### Basic example
+Sliding on horizontal/vertical swipe
+
+<img alt="A preview what swipeable-react is for" src="src/assets/swipeable_react_preview.gif" width="300" height="424" />
+
+[Live mobile demo!](https://u49lp.csb.app/)
+
+[![Edit Swiping views](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swiping-views-u49lp?fontsize=14&hidenavigation=1&theme=dark)
 
 ## API
 | Prop          | Type          | Default  | Description |
