@@ -36,7 +36,8 @@
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js --presets minify",
     "size": "gzip-size ./lib/index.js",
-    "prepublish": "rm -rf ./lib && npm run build",
+    "prepare": "rm -rf ./lib && npm run build",
+    "prepublishOnly": "npm run test:nowatch",
     "test": "jest --watch",
     "test:nowatch": "jest",
     "lint": "eslint ."
