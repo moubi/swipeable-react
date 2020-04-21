@@ -1,9 +1,11 @@
 <div align="center">
 <h1>Swipeable</h1>
 
-**Small (1.4kB gzip ✨), no dependencies React component to enable swiping in mobile browsers**
+**React component to enable swiping in mobile browsers**
 
-[![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/moubi/swipeable-react.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/moubi/swipeable-react/context:javascript) [![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
+[![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/moubi/swipeable-react?style=flat-square&logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/moubi/swipeable-react/context:javascript)
+[![moubi](https://img.shields.io/static/v1?style=flat-square&label=gzip%20size&message=1.4%20kB&color=green)](#development)
+[![moubi](https://img.shields.io/npm/v/swipeable-react?style=flat-square)](https://www.npmjs.com/package/swipeable-react) [![moubi](https://img.shields.io/github/license/moubi/swipeable-react?style=flat-square)](LICENSE)
 
 What you could use it for
 
@@ -29,6 +31,8 @@ function YourOwnComponent(props) {
     <Swipeable
       onSwipeLeft={() => { console.log("swiped left"); }}
       onSwipeRight={() => { console.log("swiped right"); }}
+      onSwipeUp={() => { console.log("swiped up"); }}
+      onSwipeDown={() => { console.log("swiped down"); }}
     >
       {innerRef => (
         <div ref={innerRef}>
