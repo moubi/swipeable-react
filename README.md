@@ -1,7 +1,12 @@
 <div align="center">
-<h1>Swipeable</h1>
+<a id="swipeable" href="#swipeable">
+  <img align="center" width="200" src="src/assets/logo.png">
+</a>
 
-**React component to enable swiping in mobile browsers**
+<br />
+<br />
+
+#### React component to enable swiping in mobile browsers
 
 [![moubi](https://img.shields.io/circleci/build/gh/moubi/swipeable-react?label=circleci&style=flat-square)](https://circleci.com/gh/moubi/swipeable-react) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/moubi/swipeable-react?style=flat-square&logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/moubi/swipeable-react/context:javascript)
 [![moubi](https://img.shields.io/static/v1?style=flat-square&label=gzip%20size&message=1.4%20kB&color=green)](#development)
