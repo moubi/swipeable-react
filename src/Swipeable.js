@@ -48,9 +48,9 @@ export default class Swipeable extends PureComponent {
 
   handleTouchEnd(e) {
     const {
-      minDistance = 20,
-      maxDistance = Infinity,
-      timeout = 500,
+      minDistance,
+      maxDistance,
+      timeout,
       onSwipeLeft,
       onSwipeRight,
       onSwipeUp,
@@ -71,9 +71,9 @@ export default class Swipeable extends PureComponent {
         // Prevent other swipeables
         e.stopPropagation();
         if (this.xDiff > 0) {
-          onSwipeLeft && onSwipeLeft();
+          onSwipeLeft();
         } else {
-          onSwipeRight && onSwipeRight();
+          onSwipeRight();
         }
       }
       // Vertical swipe
@@ -86,9 +86,9 @@ export default class Swipeable extends PureComponent {
         // Prevent other swipeables
         e.stopPropagation();
         if (this.yDiff > 0) {
-          onSwipeUp && onSwipeUp();
+          onSwipeUp();
         } else {
-          onSwipeDown && onSwipeDown();
+          onSwipeDown();
         }
       }
     }
@@ -101,6 +101,16 @@ export default class Swipeable extends PureComponent {
       this.el = el;
     });
   }
+}
+
+Swipeable.defaultProps = {
+  minDistance: 20,
+  maxDistance: Infinity,
+  timeout: 500,
+  onSwipeLeft: () => {},
+  onSwipeRight: () => {},
+  onSwipeUp: () => {},
+  onSwipeDown: () => {},
 }
 
 Swipeable.propTypes = {
