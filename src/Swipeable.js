@@ -14,9 +14,6 @@ export default class Swipeable extends PureComponent {
     this.xDiff = null;
     this.yDiff = null;
 
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +28,7 @@ export default class Swipeable extends PureComponent {
     this.el.removeEventListener("touchend", this.handleTouchEnd);
   }
 
-  handleTouchStart(e) {
+  handleTouchStart = (e) => {
     this.touchStartedTime = Date.now();
     this.x = e.touches[0].clientX;
     this.y = e.touches[0].clientY;
@@ -39,14 +36,14 @@ export default class Swipeable extends PureComponent {
     this.yDiff = 0;
   }
 
-  handleTouchMove(e) {
+  handleTouchMove = (e) => {
     if (this.x && this.y) {
       this.xDiff = this.x - e.touches[0].clientX;
       this.yDiff = this.y - e.touches[0].clientY;
     }
   }
 
-  handleTouchEnd(e) {
+  handleTouchEnd = (e) => {
     const {
       minDistance = 20,
       maxDistance = Infinity,
