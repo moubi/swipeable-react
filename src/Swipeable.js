@@ -48,9 +48,9 @@ export default class Swipeable extends PureComponent {
 
   handleTouchEnd(e) {
     const {
-      minDistance,
-      maxDistance,
-      timeout,
+      minDistance = 20,
+      maxDistance = Infinity,
+      timeout = 500,
       onSwipeLeft,
       onSwipeRight,
       onSwipeUp,
@@ -104,9 +104,6 @@ export default class Swipeable extends PureComponent {
 }
 
 Swipeable.defaultProps = {
-  minDistance: 20,
-  maxDistance: Infinity,
-  timeout: 500,
   onSwipeLeft: () => {},
   onSwipeRight: () => {},
   onSwipeUp: () => {},
