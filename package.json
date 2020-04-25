@@ -2,7 +2,7 @@
   "name": "swipeable-react",
   "version": "1.2.3",
   "main": "lib/index.js",
-  "description": "React component for swipe events on touch",
+  "description": "React component to enable swiping in mobile browsers",
   "homepage": "https://github.com/moubi/swipeable-react#readme",
   "author": "Miroslav Nikolov",
   "license": "MIT",
@@ -10,6 +10,16 @@
     "type": "git",
     "url": "https://github.com/moubi/swipeable-react"
   },
+  "keywords": [
+    "react",
+    "component",
+    "swiping",
+    "touch",
+    "mobile",
+    "detection",
+    "slide",
+    "swipe-events"
+  ],
   "dependencies": {
     "react": "16.9.0",
     "react-dom": "16.9.0"
