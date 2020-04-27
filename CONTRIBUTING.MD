@@ -14,7 +14,7 @@ That's Great! Before opening a PR:
 #### 🐞 Bug report
 If you are about to open new bug report issue try to be more specific about things like **version, browser, OS, steps**. Dont forget to attach the <kbd>bug</kbd> label.
 
-🙏 Ideally, provide codesandbox example. [Fork the basic demo](https://codesandbox.io/s/swiping-views-u49lp) if that will make it easy for you.
+Ideally, provide codesandbox example 🙏. [Fork the basic demo](https://codesandbox.io/s/swiping-views-u49lp) if that will make it easy for you.
 
 #### 💡 Feature request
 It is good to start working on new features based on issues/discussion and not opened PR in order to avoid closing irrelevant ones. Creating an issue with <kbd>feature request</kbd> label is good starting point for discussion.
