@@ -2,7 +2,6 @@
 import { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-// TODO: Rewrite using Hooks
 export default class Swipeable extends PureComponent {
   constructor(props) {
     super(props);
