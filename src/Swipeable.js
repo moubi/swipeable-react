@@ -1,106 +1,123 @@
-// Based on https://github.com/john-doherty/swiped-events
-import { PureComponent } from "react";
+import { useEffect, useRef, forwardRef, useCallback } from "react";
 import PropTypes from "prop-types";
 
-export default class Swipeable extends PureComponent {
-  constructor(props) {
-    super(props);
+const Swipeable = forwardRef(function Swipeable(props, ref) {
+  const {
+    children,
+    minDistance = 20,
+    maxDistance = Infinity,
+    timeout = 500,
+    onSwipeLeft,
+    onSwipeRight,
+    onSwipeUp,
+    onSwipeDown
+  } = props;
 
-    this.el = null;
-    this.touchStartedTime = null;
-    this.x = null;
-    this.y = null;
-    this.xDiff = null;
-    this.yDiff = null;
+  const instanceRef = useRef({
+    el: null,
+    touchStartedTime: null,
+    x: null,
+    y: null,
+    xDiff: null,
+    yDiff: null
+  });
 
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
-  }
+  const handleTouchStart = useCallback(function handleTouchStart(e) {
+    instanceRef.current.touchStartedTime = Date.now();
+    instanceRef.current.x = e.touches[0].clientX;
+    instanceRef.current.y = e.touches[0].clientY;
+    instanceRef.current.xDiff = 0;
+    instanceRef.current.yDiff = 0;
+  }, []);
 
-  componentDidMount() {
-    this.el.addEventListener("touchstart", this.handleTouchStart);
-    this.el.addEventListener("touchmove", this.handleTouchMove);
-    this.el.addEventListener("touchend", this.handleTouchEnd);
-  }
-
-  componentWillUnmount() {
-    this.el.removeEventListener("touchstart", this.handleTouchStart);
-    this.el.removeEventListener("touchmove", this.handleTouchMove);
-    this.el.removeEventListener("touchend", this.handleTouchEnd);
-  }
-
-  handleTouchStart(e) {
-    this.touchStartedTime = Date.now();
-    this.x = e.touches[0].clientX;
-    this.y = e.touches[0].clientY;
-    this.xDiff = 0;
-    this.yDiff = 0;
-  }
-
-  handleTouchMove(e) {
-    if (this.x && this.y) {
-      this.xDiff = this.x - e.touches[0].clientX;
-      this.yDiff = this.y - e.touches[0].clientY;
+  const handleTouchMove = useCallback(function handleTouchMove(e) {
+    if (instanceRef.current.x && instanceRef.current.y) {
+      instanceRef.current.xDiff = instanceRef.current.x - e.touches[0].clientX;
+      instanceRef.current.yDiff = instanceRef.current.y - e.touches[0].clientY;
     }
-  }
+  }, []);
 
-  handleTouchEnd(e) {
-    const {
-      minDistance = 20,
-      maxDistance = Infinity,
-      timeout = 500,
+  const handleTouchEnd = useCallback(
+    function handleTouchEnd(e) {
+      const timeDiff = Date.now() - instanceRef.current.touchStartedTime;
+      const xDiffAbs = Math.abs(instanceRef.current.xDiff);
+      const yDiffAbs = Math.abs(instanceRef.current.yDiff);
+
+      // Horizontal swipe
+      if (xDiffAbs > yDiffAbs) {
+        if (
+          xDiffAbs >= minDistance &&
+          xDiffAbs <= maxDistance &&
+          timeDiff <= timeout
+        ) {
+          // Prevent other swipeables
+          e.stopPropagation();
+          if (instanceRef.current.xDiff > 0) {
+            onSwipeLeft && onSwipeLeft();
+          } else {
+            onSwipeRight && onSwipeRight();
+          }
+        }
+        // Vertical swipe
+      } else {
+        if (
+          yDiffAbs >= minDistance &&
+          yDiffAbs <= maxDistance &&
+          timeDiff <= timeout
+        ) {
+          // Prevent other swipeables
+          e.stopPropagation();
+          if (instanceRef.current.yDiff > 0) {
+            onSwipeUp && onSwipeUp();
+          } else {
+            onSwipeDown && onSwipeDown();
+          }
+        }
+      }
+    },
+    [
+      minDistance,
+      maxDistance,
+      timeout,
       onSwipeLeft,
       onSwipeRight,
       onSwipeUp,
       onSwipeDown
-    } = this.props;
+    ]
+  );
 
-    const timeDiff = Date.now() - this.touchStartedTime;
-    const xDiffAbs = Math.abs(this.xDiff);
-    const yDiffAbs = Math.abs(this.yDiff);
+  instanceRef.current = {
+    ...instanceRef.current,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd
+  };
+  if (ref) {
+    ref.current = instanceRef.current;
+  }
 
-    // Horizontal swipe
-    if (xDiffAbs > yDiffAbs) {
-      if (
-        xDiffAbs >= minDistance &&
-        xDiffAbs <= maxDistance &&
-        timeDiff <= timeout
-      ) {
-        // Prevent other swipeables
-        e.stopPropagation();
-        if (this.xDiff > 0) {
-          onSwipeLeft && onSwipeLeft();
-        } else {
-          onSwipeRight && onSwipeRight();
-        }
-      }
-      // Vertical swipe
-    } else {
-      if (
-        yDiffAbs >= minDistance &&
-        yDiffAbs <= maxDistance &&
-        timeDiff <= timeout
-      ) {
-        // Prevent other swipeables
-        e.stopPropagation();
-        if (this.yDiff > 0) {
-          onSwipeUp && onSwipeUp();
-        } else {
-          onSwipeDown && onSwipeDown();
-        }
-      }
+  useEffect(() => {
+    if (!instanceRef.current || !instanceRef.current.el) {
+      return;
     }
-  }
+    let { el } = instanceRef.current;
+    el.addEventListener("touchstart", handleTouchStart);
+    el.addEventListener("touchmove", handleTouchMove);
+    el.addEventListener("touchend", handleTouchEnd);
 
-  render() {
-    const { children } = this.props;
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart);
+      el.removeEventListener("touchmove", handleTouchMove);
+      el.removeEventListener("touchend", handleTouchEnd);
+      instanceRef.current = null;
+      if (ref) ref.current = null;
+    };
+  }, [handleTouchStart, handleTouchMove, handleTouchEnd, ref]);
 
-    return children(el => {
-      this.el = el;
-    });
-  }
-}
+  return children(el => {
+    instanceRef.current.el = el;
+  });
+});
 
 Swipeable.propTypes = {
   children: PropTypes.func.isRequired,
@@ -112,3 +129,7 @@ Swipeable.propTypes = {
   onSwipeUp: PropTypes.func,
   onSwipeDown: PropTypes.func
 };
+
+Swipeable.displayName = "Swipeable";
+
+export default Swipeable;
