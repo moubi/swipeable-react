@@ -6,6 +6,14 @@ import Swipeable from "../src/Swipeable";
 
 let props;
 
+beforeAll(() => {
+  jest.spyOn(React, "useEffect").mockImplementation(React.useLayoutEffect);
+});
+
+afterAll(() => {
+  React.useEffect.mockRestore();
+});
+
 describe("Swipeable", () => {
   beforeEach(() => {
     props = {
@@ -58,13 +66,16 @@ describe("Swipeable", () => {
   });
 
   it("should set ref to the DOM element", () => {
-    const { instance } = getInstance(<Swipeable {...props} />);
-
+    let instanceRef = React.createRef();
+    getInstance(<Swipeable ref={instanceRef} {...props} />);
+    let instance = instanceRef.current;
     return expect(instance.el, "not to be", null);
   });
 
   it("should clientX and clientY on touchstart", () => {
-    const { instance } = getInstance(<Swipeable {...props} />);
+    let instanceRef = React.createRef();
+    getInstance(<Swipeable ref={instanceRef} {...props} />);
+    let instance = instanceRef.current;
 
     instance.handleTouchStart({
       touches: [
@@ -81,7 +92,9 @@ describe("Swipeable", () => {
   });
 
   it("should not trigger move if clientX and clientY are not set", () => {
-    const { instance } = getInstance(<Swipeable {...props} />);
+    let instanceRef = React.createRef();
+    getInstance(<Swipeable ref={instanceRef} {...props} />);
+    let instance = instanceRef.current;
 
     instance.handleTouchStart({
       touches: [
@@ -106,7 +119,9 @@ describe("Swipeable", () => {
   });
 
   it("should set clientXDiff and clientYDiff on touchmove", () => {
-    const { instance } = getInstance(<Swipeable {...props} />);
+    let instanceRef = React.createRef();
+    getInstance(<Swipeable ref={instanceRef} {...props} />);
+    let instance = instanceRef.current;
 
     instance.handleTouchStart({
       touches: [
@@ -132,7 +147,10 @@ describe("Swipeable", () => {
 
   describe("when swipe is NOT successful", () => {
     it("should NOT swipe horizontally if distance is too small", () => {
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -162,7 +180,10 @@ describe("Swipeable", () => {
 
     it("should NOT swipe horizontally if distance too big", () => {
       props.maxDistance = 100;
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -192,7 +213,10 @@ describe("Swipeable", () => {
     });
 
     it("should NOT swipe horizontally if distance is within range, but too much time passed", () => {
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
       const clock = sinon.useFakeTimers();
 
@@ -225,7 +249,10 @@ describe("Swipeable", () => {
     });
 
     it("should NOT swipe vertically if distance is too small", () => {
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -255,7 +282,10 @@ describe("Swipeable", () => {
 
     it("should NOT swipe vertically if distance is too big", () => {
       props.maxDistance = 100;
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -285,7 +315,10 @@ describe("Swipeable", () => {
     });
 
     it("should NOT swipe vertically if distance is within range, but too much time passed", () => {
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
       const clock = sinon.useFakeTimers();
 
@@ -324,7 +357,10 @@ describe("Swipeable", () => {
       props.timeout = 300;
       const clock = sinon.useFakeTimers();
 
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -360,7 +396,10 @@ describe("Swipeable", () => {
       props.timeout = 300;
       const clock = sinon.useFakeTimers();
 
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -396,7 +435,10 @@ describe("Swipeable", () => {
       props.timeout = 300;
       const clock = sinon.useFakeTimers();
 
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
@@ -432,7 +474,10 @@ describe("Swipeable", () => {
       props.timeout = 300;
       const clock = sinon.useFakeTimers();
 
-      const { instance } = getInstance(<Swipeable {...props} />);
+      let instanceRef = React.createRef();
+      getInstance(<Swipeable ref={instanceRef} {...props} />);
+      let instance = instanceRef.current;
+
       const stopPropagation = sinon.stub().named("stopPropagation");
 
       instance.handleTouchStart({
