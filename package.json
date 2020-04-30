@@ -42,7 +42,7 @@
     "gzip-size-cli": "^3.0.0"
   },
   "peerDependencies": {
-    "react": ">= 15.0.0"
+    "react": ">= 16.8.0"
   },
   "scripts": {
     "build": "mkdir -p lib && babel ./src --out-file ./lib/index.js --presets minify",
