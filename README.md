@@ -78,7 +78,14 @@ Sliding on horizontal/vertical swipe
  - Uses `touchstart`, `touchmove` and `touchend` events
  - Multiple nested Swipeables are supported.
 
- In the last scenario successful nested swipe will prevent triggering parent swipeables. That is done by calling `stopPropagation()` in the `touchend` handler.
+ In the last scenario successful nested swipe will prevent triggering parent swipeables. That is done by calling `stopPropagation()` inside `touchend` handler.
+
+## Requirements ✅
+Swipeable has been rewritten using React hooks ↩ as per `v2.0.0`.
+
+In order to work properly any consumer project should have version of <kbd>react >= 16.8.0</kbd> (when hooks were introduced officially).
+
+If hooks are not an option try Swipeable `v1.3.0` which is using classes and depends on <kbd>react >= 15.5.0</kbd>.
 
 ## Development
 The code is built on node `v10.15.1`. Set as default in `.nvmrc` for nvm users.
