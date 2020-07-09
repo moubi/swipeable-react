@@ -106,7 +106,7 @@ yarn build
 That will create a `lib/` folder with `index.js` file containing transpiled code from the `src/Swipeable.js` component
 
 ## Contributing
-Contribution is always welcome in the form of new features, bug fixes, ideas or simply tweating about [Swipeable](https://github.com/moubi/swipeable-react). Check the relavant [guides here](https://github.com/moubi/swipeable-react/blob/master/CONTRIBUTING.MD).
+Contribution is always welcome in the form of new features, bug fixes, ideas or simply tweeting about [Swipeable](https://github.com/moubi/swipeable-react). Check the relevant [guides here](https://github.com/moubi/swipeable-react/blob/master/CONTRIBUTING.md).
 
 ## Credits
 Non-react [swiped-events](https://github.com/john-doherty/swiped-events) by [John Doherty](https://github.com/john-doherty)
